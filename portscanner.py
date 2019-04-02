@@ -20,6 +20,7 @@ else:
     portRangeA = int(portRange)
     portRangeB = int(portRange) + 1
 
+
 def portinfo(currentport):
     return {
         1: '1 (TCPMUX)',
@@ -37,6 +38,7 @@ def portinfo(currentport):
         6667: '6667 (IRC)',
         8333: '8333 (Bitcoin)',
     }.get(currentport, currentport)
+
 
 try:
     for port in range(portRangeA, portRangeB):
@@ -65,4 +67,3 @@ except socket.error:
 timeEnd = datetime.now()
 timeTotal = timeEnd - timeStart
 print("\nScan completed in:", timeTotal)
-
